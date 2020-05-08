@@ -28,7 +28,7 @@ _Contract Terms & Conditions Management Web App that allows users to generate an
 * After User chooses appropriate terms to show in Contract Terms List, User can export the Contract Terms List in a formatted Word doc.
 
 ## Project Diagram (working version)
-![Components](src/img/drawing.jpg)
+![Components](src/img/diagram.png)
 
 ## Setup/Installation:
 
