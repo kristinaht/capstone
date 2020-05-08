@@ -12,19 +12,19 @@ _Contract Terms & Conditions Management Web App that allows users to generate an
 
 ## User Stories
 
-* User will see a splash page with a list of Initial State displaying term names
-* User can also add term to Master Contract Terms List.
+* User will see a splash page with Initial State Master Terms List displaying term names
+* User can click on a term to edit it:
+    - User can choose an alternative term from Alternative Terms List for each specific term (for example, Governing Law term has a list of alternative gov. law terms associated to it)
+    - User can also update a term by replacing it with new inputted text
+* User can add term to Master Contract Terms List.
   - Input: add Compensation term
   - Output: Compensation term added to Contract Terms List
-* User can add different versions of terms for the same contract provision.
-  - Input: { Existing compensation term }, User adds { alternative compensation term }
-  - Output: Application saves both Compensation terms in Alternative Terms List: { Existing compensation term }, { Alternative compensation term }
-* User can view terms in Contract Terms List
-* User can click on a term to edit it:
-    - User can choose an alternative term from Alternative Terms List
-    - User can also update a term by replacing it with new inputted text
+* User can add new alternative terms to Alternative Terms List for each term
+  - Input: Alternative Compensation Terms List = { Existing compensation term }, User adds { alternative compensation term }
+  - Output: Alternative Compensation Terms List = { Existing compensation term }, { Alternative compensation term }
+* User can view updated/added terms in Contract Terms List
 * User can delete term
-* After User chooses appropriate terms to show in Contract Terms List, User can save the list in the database as a template
+* After User chooses appropriate terms to show in Master Contract Terms List, User can save the list in the database as a template
 * After User chooses appropriate terms to show in Contract Terms List, User can export the Contract Terms List in a formatted Word doc.
 
 ## Project Diagram (working version)
