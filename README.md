@@ -1,4 +1,72 @@
+# _APP Name_
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+#### _React Fundamentals Independent Project_, _24 April 2020_
+
+#### By _**Kristina Hengster Tintor**_
+
+## Description
+
+_Contract Terms & Conditions Management Web App that allows users to generate and modify contracts by selecting appropriate terms and conditions to be used for the type of work being performed or to select appropriate alternative terms & conditions when responding to change requests during negotiations._
+
+## User Stories
+
+* User will see a splash page with a list of Initial State displaying term names
+* User can also add term to Master Contract Terms List.
+  - Input: add Compensation term
+  - Output: Compensation term added to Contract Terms List
+* User can add different versions of terms for the same contract provision.
+  - Input: { Existing compensation term }, User adds { alternative compensation term }
+  - Output: Application saves both Compensation terms in Alternative Terms List: { Existing compensation term }, { Alternative compensation term }
+* User can view terms in Contract Terms List
+* User can click on a term to edit it:
+    - User can choose an alternative term from Alternative Terms List
+    - User can also update a term by replacing it with new inputted text
+* User can delete term
+* After User chooses appropriate terms to show in Contract Terms List, User can save the list in the database as a template
+* After User chooses appropriate terms to show in Contract Terms List, User can export the Contract Terms List in a formatted Word doc.
+
+## Project Diagram (working version)
+![Components](src/img/drawing.jpg)
+
+## Setup/Installation:
+
+###### For Windows:
+_Please visit the [Node.js website](https://nodejs.org/en/download/) for installation instructions._
+
+#### Install this application
+
+_Clone this repository via Terminal using the following commands:_
+* _$ cd desktop_
+* _$ git clone {url to this repository}_
+* _$ cd capstone_
+_Then, confirm that you have navigated to the capstone project directory by entering "pwd" in Terminal._
+
+_Next, install npm at the project's root directory via the following commands:_
+* _$ npm install_
+* _$ npm run build_
+
+_Open the contents of the directory in a text editor or IDE of your choice (e.g., to open the contents of the directory in Visual Studio Code on macOS, enter the command "code ." in Terminal)._
+
+## **Technologies used**
+
+* React 6.13.7
+
+* UUID (for now)
+
+* Git 2.23.0
+
+* Webpack
+
+* JavaScript 
+
+* Visual Studio Code 1.43.1
+
+* GitBash
+
+* Firebase with Firestore
+
 
 ## Available Scripts
 
@@ -66,3 +134,10 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### License
+
+*This webpage is licensed under the MIT license.*
+
+Copyright (c) 2020 **_Kristina Hengster Tintor_**
+
