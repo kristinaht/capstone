@@ -17,8 +17,9 @@ class TermsControl extends React.Component {
 
     return(
       <React.Fragment>
-        { currentlyVisibleState }
-        <button>{ buttonText }</button>
+        <TermList />
+        {/* { currentlyVisibleState }
+        <button>{ buttonText }</button> */}
       </React.Fragment>
     )
   }

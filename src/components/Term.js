@@ -6,8 +6,8 @@ function Term(props){
   return(
     <React.Fragment>
       <div>
-        <h2>Term Name: Insurance</h2>
-        <h2>Insurance language term language goes here</h2>
+        <h2>Term Name: {props.name}</h2>
+        <h2>{props.body}</h2>
       </div>
     </React.Fragment>
   )
@@ -16,5 +16,5 @@ function Term(props){
 export default Term;
 
 Term.propTypes = {
-  
+
 }
