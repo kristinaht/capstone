@@ -1,6 +1,6 @@
 import React from 'react';
 import TermList from './TermList';
-import NewTermForm from './NewTermForm';
+import AddTermForm from './AddTermForm';
 import EditTermForm from './EditTermForm'; 
 
 class TermsControl extends React.Component {
@@ -12,11 +12,16 @@ class TermsControl extends React.Component {
   }
 
   render(){
-    
+    let currentlyVisibleState = null;
+    let buttonText = null;
+
     return(
       <React.Fragment>
-        
+        { currentlyVisibleState }
+        <button>{ buttonText }</button>
       </React.Fragment>
     )
   }
 }
+
+export default TermsControl;
