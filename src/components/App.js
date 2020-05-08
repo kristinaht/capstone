@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
 import Header from "./Header";
-import CoffeeControl from "./CoffeeControl"; //How will I call the main control file???
+import TermsControl from "./TermsControl"; 
 import Footer from "./Footer";
 
 function App() {
   return (
     <React.Fragment>
       <Header />
-      <CoffeeControl /> 
+      <TermsControl /> 
       <Footer />
     </React.Fragment>
   );
