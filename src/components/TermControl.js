@@ -49,11 +49,10 @@ class TermsControl extends React.Component {
   }
 
   handleEditingTerm = (termToEdit) => {
-    const editedmasterTermList = this.state.masterTermList
-      .filter(term => term.id !== this.state.selectedTerm.id) //filter to replace the term with the new version below
-      .concat(termToEdit);
+    const { dispatch } = this.props;
+    const action = a.addTerm(termToEdit);
+    dispatch(action);
     this.setState({
-      masterTermList: editedmasterTermList,
       editing: false,
       selectedTerm: null
     })
