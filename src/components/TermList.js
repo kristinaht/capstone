@@ -1,11 +1,21 @@
 import React from 'react';
 import Term from './Term';
+import PropTypes from 'prop-types';
 
-function TermList() {
+function TermList(props) {
   return (
-    <Term
-    name = "Insurance"
-    body = "Insurance language goes here" />
+    <React.Fragment>
+      <hr/>
+      { Object.values(props.termList).map((term) => {
+        return <Term
+        whenTermClicked={ props.onTermSelection }
+        name={term.name}
+        body={term.body}
+        id={term.id}
+        key={term.id} />
+
+      })}
+    </React.Fragment>
   );
 }
 
