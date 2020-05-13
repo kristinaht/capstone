@@ -8,6 +8,7 @@ function Term(props){
       <div onClick = {() => props.whenTermClicked(props.id)}>
         <h2>Term Name: {props.name}</h2>
         <h2>{props.body}</h2>
+        {/* <button onClick = {()=> props.whenTermClicked(props.id)}>DETAILS</button> */}
       </div>
       <hr/>
     </React.Fragment>

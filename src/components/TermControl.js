@@ -80,7 +80,7 @@ class TermsControl extends React.Component {
     currentlyVisibleState =
     <TermList
       termList={ this.props.masterTermList }
-      onTermSelection={ this.props.handleTermSelection } />
+      onTermSelection={ this.handleTermSelection } />
     buttonText='Add Term';
   }
 
