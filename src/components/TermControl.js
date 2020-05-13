@@ -2,10 +2,11 @@ import React from 'react';
 import TermList from './TermList';
 import AddTermForm from './AddTermForm';
 import EditTermForm from './EditTermForm'; 
+import TermDetail from './TermDetail';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as a from './../actions';
-import termListReducer from '../reducers/term-list-reducer';
+
 
 class TermsControl extends React.Component {
   constructor(props) {
@@ -24,13 +25,13 @@ class TermsControl extends React.Component {
       });
     } else {
       const { dispatch } = this.props;
-      const action = a.toggleForm;
+      const action = a.toggleForm();
       dispatch(action);
     }
   }
 
   handleAddingNewTermToList = (newTerm) => {
-    const { dispatch } = newTerm;
+    const { dispatch } = this.props;
     const action = a.addTerm(newTerm);
     dispatch(action);
     const action2 = a.toggleForm();
@@ -68,7 +69,7 @@ class TermsControl extends React.Component {
     currentlyVisibleState = 
     <TermDetail
       term = { this.state.selectedTerm }
-      onClickingDelete = { this.state.handleDeletingTerm } />
+      onClickingDelete = { this.handleDeletingTerm } />
     buttonText='Return to Terms List';
   } else if (this.props.formVisible) {
     currentlyVisibleState =
@@ -79,7 +80,7 @@ class TermsControl extends React.Component {
     currentlyVisibleState =
     <TermList
       termList={ this.props.masterTermList }
-      onTermSelection={ this.handleTermSelection } />
+      onTermSelection={ this.props.handleTermSelection } />
     buttonText='Add Term';
   }
 
@@ -99,8 +100,8 @@ TermsControl.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    masterTermList: state.termListReducer,
-    formVisible: state.formReducer
+    masterTermList: state.masterTermList,
+    formVisible: state.formVisible
   }
 }
 
