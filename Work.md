@@ -9,3 +9,6 @@
    https://reactjs.org/docs/forms.html 
 
 5. Research Structuring Data in Firestore
+
+6. Watch video on Maps, Arrays and Subcollections in Firestore: 
+   https://www.youtube.com/watch?v=o7d5Zeic63s&feature=emb_logo   
