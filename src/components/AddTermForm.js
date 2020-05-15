@@ -1,21 +1,24 @@
 import React from 'react';
-import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
+import { useFirestore } from 'react-redux-firebase';
+import { firestore } from 'firebase';
 
 function AddTermForm(props) {
 
-  function handleAddTermFormSubmission(event) {
+  function addTermToFirestore(event) {
     event.preventDefault();
-    props.onNewTermCreation({
-      name: event.target.name.value,
-      body: event.target.body.value,
-      id: v4()
-    });
-    console.log(event.target.name.value);
+    props.onNewTermCreation();
+   
+    return firestore.collection('terms').add(
+      {
+        name: event.target.name.value,
+        body: event.target.body.value
+      }
+    )
   }
   return(
     <React.Fragment>
-      <form onSubmit={handleAddTermFormSubmission}>
+      <form onSubmit={addTermToFirestore}>
         <input
         type='text'
         name='name'

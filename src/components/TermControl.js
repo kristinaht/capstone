@@ -35,12 +35,10 @@ class TermsControl extends React.Component {
     this.setState({ editing: true });
   }
 
-  handleAddingNewTermToList = (newTerm) => {
+  handleAddingNewTermToList = () => {
     const { dispatch } = this.props;
-    const action = a.addTerm(newTerm);
+    const action = a.toggleForm();
     dispatch(action);
-    const action2 = a.toggleForm();
-    dispatch(action2);
   }
 
   handleTermSelection = (id) => {
@@ -48,15 +46,15 @@ class TermsControl extends React.Component {
     this.setState({ selectedTerm: selectedTerm });
   }
 
-  handleEditingTerm = (termToEdit) => {
-    const { dispatch } = this.props;
-    const action = a.addTerm(termToEdit);
-    dispatch(action);
-    this.setState({
-      editing: false,
-      selectedTerm: null
-    })
-  }
+  // handleEditingTerm = (termToEdit) => {
+  //   const { dispatch } = this.props;
+  //   const action = a.addTerm(termToEdit);
+  //   dispatch(action);
+  //   this.setState({
+  //     editing: false,
+  //     selectedTerm: null
+  //   })
+  // }
 
   handleDeletingTerm = (id) => {
     const { dispatch } = this.props;
