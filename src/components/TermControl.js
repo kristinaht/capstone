@@ -6,7 +6,7 @@ import TermDetail from './TermDetail';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as a from './../actions';
-
+import { withFirestore } from 'react-redux-firebase';
 
 class TermsControl extends React.Component {
   constructor(props) {
@@ -42,8 +42,15 @@ class TermsControl extends React.Component {
   }
 
   handleTermSelection = (id) => {
-    const selectedTerm = this.props.masterTermList[id];
-    this.setState({ selectedTerm: selectedTerm });
+    this.props.firestore.get({ collection: 'terms', doc: id})
+      .then((term) => {
+        const firestoreTerm={
+          name: term.get('name'),
+          body: term.get('body'),
+          id: term.id
+        }
+      this.setState({ selectedTerm: firestoreTerm });
+      })
   }
 
   // handleEditingTerm = (termToEdit) => {
@@ -109,11 +116,11 @@ TermsControl.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    masterTermList: state.masterTermList,
+    // masterTermList: state.masterTermList,
     formVisible: state.formVisible
   }
 }
 
 TermsControl = connect(mapStateToProps)(TermsControl);
 
-export default TermsControl;
+export default withFirestore(TermsControl);
