@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useFirestore } from 'react-redux-firebase';
-import { firestore } from 'firebase';
 
 function AddTermForm(props) {
 
+  const firestore = useFirestore();
+  
   function addTermToFirestore(event) {
+
+   
+
     event.preventDefault();
     props.onNewTermCreation();
    
