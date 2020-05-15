@@ -12,3 +12,8 @@
 
 6. Watch video on Maps, Arrays and Subcollections in Firestore: 
    https://www.youtube.com/watch?v=o7d5Zeic63s&feature=emb_logo   
+
+7. Refresh memory on styling in React:
+   https://www.learnhowtoprogram.com/react/react-fundamentals/using-external-stylesheets-with-react   
+   https://www.learnhowtoprogram.com/react/react-fundamentals/styling-react-css-objects
+   https://www.learnhowtoprogram.com/react/react-with-nosql/styled-components

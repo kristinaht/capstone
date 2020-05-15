@@ -1,13 +1,13 @@
+
 body {
   font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
-Footer {
+.footer {
   width: 100%;
   background-color: #c5c4c4;
   display: flex;
 }
-
 
 
 
