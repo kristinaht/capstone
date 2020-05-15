@@ -9,7 +9,7 @@ function TermDetail(props) {
       <h1>Term Detail</h1>
       <h2>{ term.name }</h2>
       <p>{ term.body }</p>
-      <button onClick={ onClickingDelete }>Delete </button>
+      <button onClick={ () => onClickingDelete(term.id) }>Delete </button>
       <button onClick={ onClickingEdit }>Edit </button>
     </React.Fragment>
   )
