@@ -3,8 +3,19 @@ import Term from './Term';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase';
+import { Card, Button } from 'react-bootstrap';
 
 function TermList(props) {
+
+  const termListStyle = {
+    position: 'relative',
+    top: '5vh',
+    // display: 'flex',
+    justifyContent: 'space-around',
+    flexWrap: 'wrap',
+    backgroundColor: '#333333'
+  }
+
   
   useFirestoreConnect([
     { collection: 'terms' }
@@ -14,7 +25,7 @@ function TermList(props) {
 
   if(isLoaded(terms)) {
     return(
-      <React.Fragment>
+      <div style={termListStyle}>
         <hr/>
         { terms.map((term) => {
           return <Term 
@@ -24,7 +35,7 @@ function TermList(props) {
             id={ term.id }
             key={ term.id } />
         })}
-      </React.Fragment>
+      </div>
     )
   } else {
     return(

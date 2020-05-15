@@ -1,3 +1,8 @@
+.term-card, .reused-button {
+  transition: all .4s ease-in-out;
+}
+
+
 
 body {
   margin: 15px;
