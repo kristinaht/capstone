@@ -61,11 +61,7 @@ class TermsControl extends React.Component {
   }
 
   handleDeletingTerm = (id) => {
-    const { dispatch } = this.props;
-    const action = a.deleteTerm(id);
-    dispatch(action);
-    // const action2 = a.toggleForm();
-    // dispatch(action2);
+    this.props.firestore.delete({ collection: 'terms', doc: id});
     this.setState({ selectedTerm: null });
   }
 
@@ -113,7 +109,6 @@ TermsControl.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    // masterTermList: state.masterTermList,
     formVisible: state.formVisible
   }
 }
