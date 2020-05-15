@@ -7,3 +7,5 @@
 
 4. Research options for having a list of alternative terms to choose from when updating an existing term. For now, it seems that using select tag in UpdateTermForm component is my best bet. Issue with that is that it means alternative terms will be hard coded in the select tag. Or will they??? 
    https://reactjs.org/docs/forms.html 
+
+5. Research Structuring Data in Firestore
