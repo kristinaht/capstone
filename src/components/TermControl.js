@@ -53,15 +53,12 @@ class TermsControl extends React.Component {
       })
   }
 
-  // handleEditingTerm = (termToEdit) => {
-  //   const { dispatch } = this.props;
-  //   const action = a.addTerm(termToEdit);
-  //   dispatch(action);
-  //   this.setState({
-  //     editing: false,
-  //     selectedTerm: null
-  //   })
-  // }
+  handleEditingTerm = () => {
+    this.setState({
+      editing: false,
+      selectedTerm: null
+    })
+  }
 
   handleDeletingTerm = (id) => {
     const { dispatch } = this.props;

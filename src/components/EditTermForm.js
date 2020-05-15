@@ -1,15 +1,20 @@
 import React from 'react';
+import { useFirestore } from 'react-redux-firebase';
 
 function EditTermForm(props) {
+
+  const firestore = useFirestore();
+
   const { term } = props;
 
   function handleEditTermFormSubmission(event) {
     event.preventDefault();
-    props.onEditTerm({
+    props.onEditTerm();
+    const propertiesToUpdate = {
       name: event.target.name.value,
-      body: event.target.body.value,
-      id: term.id
-    })
+      body: event.target.body.value
+    }
+    return firestore.update({ collection: 'terms', doc: term.id}, propertiesToUpdate);
   }
 
   return(
