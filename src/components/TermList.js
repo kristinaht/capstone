@@ -3,16 +3,18 @@ import Term from './Term';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase';
-import { Card, Button } from 'react-bootstrap';
+import { Container, Card, Button } from 'react-bootstrap';
 
 function TermList(props) {
 
   const termListStyle = {
-    position: 'relative',
+    // position: 'relative',
+    margin: 'auto',
     top: '5vh',
     // display: 'flex',
     justifyContent: 'space-around',
     flexWrap: 'wrap',
+    width: '80%',
     backgroundColor: '#333333'
   }
 
@@ -25,17 +27,20 @@ function TermList(props) {
 
   if(isLoaded(terms)) {
     return(
-      <div style={termListStyle}>
-        <hr/>
-        { terms.map((term) => {
-          return <Term 
-            whenTermClicked={ props.onTermSelection }
-            name={ term.name }
-            body={ term.body }
-            id={ term.id }
-            key={ term.id } />
-        })}
-      </div>
+      // <div >
+      <Container>
+        {/* <hr/> */}
+        <Card style={termListStyle}>
+          { terms.map((term) => {
+            return <Term 
+              whenTermClicked={ props.onTermSelection }
+              name={ term.name }
+              body={ term.body }
+              id={ term.id }
+              key={ term.id } />
+          })}
+        </Card>
+      </Container>
     )
   } else {
     return(
