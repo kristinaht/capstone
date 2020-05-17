@@ -3,11 +3,9 @@ import Term from './Term';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase';
-import { Container, Card, Button, Modal } from 'react-bootstrap';
+import { Container, Card, Button } from 'react-bootstrap';
 
 function TermList(props) {
-
-  const [modalShow, setModalShow] = React.useState(false);
 
   const termListStyle = {
     // position: 'relative',
@@ -32,31 +30,7 @@ function TermList(props) {
     return(
       // <div >
       <Container>
-
-<>
-<Button variant="primary" onClick={() => setModalShow(true)}>
-  Launch vertically centered modal
-</Button>
-
-{ terms.map((term) => {
-            return <Term 
-            show={modalShow}
-  onHide={() => setModalShow(false)}
-              whenTermClicked={ props.onTermSelection }
-              name={ term.name }
-              body={ term.body }
-              id={ term.id }
-              key={ term.id } />
-          })} 
-
-{/* <Term
-  show={modalShow}
-  onHide={() => setModalShow(false)}
-  
-/> */}
-</>
-
-        {/* <hr/>
+        {/* <hr/> */}
         <Card style={termListStyle}>
           { terms.map((term) => {
             return <Term 
@@ -65,8 +39,8 @@ function TermList(props) {
               body={ term.body }
               id={ term.id }
               key={ term.id } />
-          })} */}
-        {/* </Card> */}
+          })}
+        </Card>
       </Container>
     )
   } else {
