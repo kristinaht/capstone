@@ -7,6 +7,9 @@ function EditTermForm(props) {
 
   const { term } = props;
 
+  const termsCollection = db.collection('terms');
+  const query = termsCollection.where('name', '==', )
+
   function handleEditTermFormSubmission(event) {
     event.preventDefault();
     props.onEditTerm();

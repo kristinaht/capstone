@@ -17,3 +17,5 @@
    https://www.learnhowtoprogram.com/react/react-fundamentals/using-external-stylesheets-with-react   
    https://www.learnhowtoprogram.com/react/react-fundamentals/styling-react-css-objects
    https://www.learnhowtoprogram.com/react/react-with-nosql/styled-components
+
+8. Research saving collections in firestore.
