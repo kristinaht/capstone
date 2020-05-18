@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase';
 import { Container, Card, Button } from 'react-bootstrap';
+import MyDocument from './MyDocument';
+import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
 
 function TermList(props) {
 
@@ -24,6 +26,38 @@ function TermList(props) {
   ]);
 
   const terms = useSelector(state => state.firestore.ordered.terms);
+
+  const styles = StyleSheet.create({
+    page: {
+      flexDirection: 'row',
+      backgroundColor: '#E4E4E4'
+    },
+    section: {
+      margin: 10,
+      padding: 10,
+      flexGrow: 1
+    }
+  });
+
+  const myDocument = (terms) => (
+    <Document>
+      <Page size="A4" style={styles.page}>
+        <View style={styles.section}>
+          <Text>{ terms.map((term) => {
+            return <Term 
+              whenTermClicked={ props.onTermSelection }
+              name={ term.name }
+              body={ term.body }
+              id={ term.id }
+              key={ term.id } />
+          })}</Text>
+        </View>
+        <View style={styles.section}>
+          <Text>Section #2</Text>
+        </View>
+      </Page>
+    </Document>
+  );
   
 
   if(isLoaded(terms)) {
@@ -40,6 +74,7 @@ function TermList(props) {
               id={ term.id }
               key={ term.id } />
           })}
+          <Button onClick={myDocument}>Export</Button>
         </Card>
       </Container>
     )

@@ -3,10 +3,12 @@ import TermList from './TermList';
 import AddTermForm from './AddTermForm';
 import EditTermForm from './EditTermForm'; 
 import TermDetail from './TermDetail';
+import MyDocument from './MyDocument';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as a from './../actions';
 import { withFirestore, isLoaded } from 'react-redux-firebase';
+import { PDFDownloadLink, Document, Page } from '@react-pdf/renderer';
 
 
 class TermsControl extends React.Component {
@@ -66,6 +68,16 @@ class TermsControl extends React.Component {
     this.setState({ selectedTerm: null });
   }
 
+  handleExporting = ()  =>{
+    return (
+      <div>
+      <PDFDownloadLink document={<TermList />} fileName="somename.pdf">
+        {({ blob, url, loading, error }) => (loading ? 'Loading document...' : 'Download now!')}
+      </PDFDownloadLink>
+    </div>
+    );
+  }
+
 
   render(){
     const auth = this.props.firebase.auth();
@@ -86,6 +98,7 @@ class TermsControl extends React.Component {
     if ((isLoaded(auth)) && (auth.currentUser !== null)) {
       let currentlyVisibleState = null;
     let buttonText = null;
+    let exportText = null;
 
   if(this.state.editing) {
     currentlyVisibleState = <EditTermForm term={ this.state.selectedTerm } onEditTerm={ this.handleEditingTerm } />
@@ -106,7 +119,9 @@ class TermsControl extends React.Component {
     currentlyVisibleState =
     <TermList
       termList={ this.props.masterTermList }
-      onTermSelection={ this.handleTermSelection } />
+      onTermSelection={ this.handleTermSelection }
+      onExportClick={ this.handleExporting }/>
+      exportText='Export';
     buttonText='Add Term';
   }
   return(
@@ -114,6 +129,7 @@ class TermsControl extends React.Component {
    
       { currentlyVisibleState }
       <button onClick={ this.handleClick }>{ buttonText }</button>
+      <button onClick={this.handleExporting }>{ exportText }</button>
     </React.Fragment>
   );
 
