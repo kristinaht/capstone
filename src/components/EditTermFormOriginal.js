@@ -14,10 +14,8 @@ function EditTermForm(props) {
     event.preventDefault();
     props.onEditTerm();
     const propertiesToUpdate = {
-      parties: event.target.parties.value,
-      whereas: event.target.whereas.value,
-      sow: event.target.sow.value,
-      govLaw: event.target.govLaw.value
+      name: event.target.name.value,
+      body: event.target.body.value
     }
     return firestore.update({ collection: 'terms', doc: term.id}, propertiesToUpdate);
   }
@@ -28,21 +26,13 @@ function EditTermForm(props) {
      {/* <form formSubmissionHandler={props.handleEditTicketFormSubmission}> */}
      <input
         type='text'
-        name='parties'
-        placeholder={props.term.parties} />
+        name='name'
+        placeholder='Term name' />
         <input
         type='text'
-        name='whereas'
-        placeholder={props.term.whereas} />
-        <input
-        type='text'
-        name='sow'
-        placeholder={props.term.sow} />
-        <input
-        type='text'
-        name='govLaw'
-        placeholder={props.term.govLaw} />
-        <button type='submit'>Update terms</button>
+        name='body'
+        placeholder='Term body' />
+        <button type='submit'>Add new term</button>
      </form>
     </React.Fragment>
   )

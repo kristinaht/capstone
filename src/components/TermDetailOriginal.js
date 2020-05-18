@@ -7,11 +7,8 @@ function TermDetail(props) {
   return(
     <React.Fragment>
       <h1>Term Detail</h1>
-      <h2>{ term.parties }</h2>
-      <p>{ term.whereas }</p>
-      <p>{ term.sow }</p>
-      <p>{ term.govLaw }</p>
-      
+      <h2>{ term.name }</h2>
+      <p>{ term.body }</p>
       <button onClick={ () => onClickingDelete(term.id) }>Delete </button>
       <button onClick={ onClickingEdit }>Edit </button>
     </React.Fragment>

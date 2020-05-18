@@ -15,10 +15,8 @@ function AddTermForm(props) {
    
     return firestore.collection('terms').add(
       {
-        parties: event.target.parties.value,
-        whereas: event.target.whereas.value,
-        sow: event.target.sow.value,
-        govLaw: event.target.govLaw.value
+        name: event.target.name.value,
+        body: event.target.body.value
       }
     )
   }
@@ -27,21 +25,13 @@ function AddTermForm(props) {
       <form onSubmit={addTermToFirestore}>
         <input
         type='text'
-        name='parties'
-        placeholder='This contract is between...' />
+        name='name'
+        placeholder='Term name' />
         <input
         type='text'
-        name='whereas'
-        placeholder='WHEREAS' />
-        <input
-        type='text'
-        name='sow'
-        placeholder='Scope of Work' />
-        <input
-        type='text'
-        name='govLaw'
-        placeholder='Governing Law..' />
-        <button type='submit'>Add new terms</button>
+        name='body'
+        placeholder='Term body' />
+        <button type='submit'>Add new term</button>
       </form>
     </React.Fragment>
   )
