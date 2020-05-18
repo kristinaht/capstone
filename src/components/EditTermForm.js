@@ -24,14 +24,26 @@ function EditTermForm(props) {
     <React.Fragment>
      <form  onSubmit={handleEditTermFormSubmission}>
      {/* <form formSubmissionHandler={props.handleEditTicketFormSubmission}> */}
-     <input
+     <select value={props.name}>
+       <option name='name'>Governing law</option>
+       <option name='name1'>insurance</option>
+       {/* <option></option>
+       <option></option> */}
+     </select>
+     <select value={props.body}>
+       <option name='body'>bla bla gov body</option>
+       <option name="body1">bla insurance</option>
+       {/* <option></option>
+       <option></option> */}
+     </select>
+     {/* <input
         type='text'
         name='name'
         placeholder='Term name' />
         <input
         type='text'
         name='body'
-        placeholder='Term body' />
+        placeholder='Term body' /> */}
         <button type='submit'>Add new term</button>
      </form>
     </React.Fragment>

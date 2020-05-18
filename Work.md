@@ -26,5 +26,5 @@
 10. Create a test repo for react app that generates a pdf doc
    https://github.com/kristinaht/pdf-generator.git 
 
-11. Watch firestore tutorials starting with this video:
+11. Stop trying to export TermList as a word/pdf doc and watch firestore tutorials starting with this video:
    https://www.youtube.com/watch?v=_Y4m2hOP_K8  
