@@ -22,3 +22,6 @@
 
 9. Research exporting react page as a word doc:
    https://stackoverflow.com/questions/59303661/how-can-i-export-react-to-word-document   
+
+10. Create a test repo for react app that generates a pdf doc
+   https://github.com/kristinaht/pdf-generator.git 
