@@ -19,3 +19,6 @@
    https://www.learnhowtoprogram.com/react/react-with-nosql/styled-components
 
 8. Research saving collections in firestore.
+
+9. Research exporting react page as a word doc:
+   https://stackoverflow.com/questions/59303661/how-can-i-export-react-to-word-document   
