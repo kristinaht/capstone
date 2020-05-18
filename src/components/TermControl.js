@@ -20,6 +20,8 @@ class TermsControl extends React.Component {
     };
   }
 
+ 
+
   handleClick = () => {
     if(this.state.selectedTerm != null){
       this.setState({

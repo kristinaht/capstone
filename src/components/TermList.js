@@ -9,6 +9,8 @@ import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
 
 function TermList(props) {
 
+ 
+
   const termListStyle = {
     // position: 'relative',
     margin: 'auto',
@@ -38,19 +40,14 @@ function TermList(props) {
       flexGrow: 1
     }
   });
+  
 
-  const myDocument = (terms) => (
+
+  const myDocument = (termsList) => (
     <Document>
       <Page size="A4" style={styles.page}>
         <View style={styles.section}>
-          <Text>{ terms.map((term) => {
-            return <Term 
-              whenTermClicked={ props.onTermSelection }
-              name={ term.name }
-              body={ term.body }
-              id={ term.id }
-              key={ term.id } />
-          })}</Text>
+          <Text>{termList}</Text>
         </View>
         <View style={styles.section}>
           <Text>Section #2</Text>
