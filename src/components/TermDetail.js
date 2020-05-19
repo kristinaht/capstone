@@ -28,7 +28,7 @@ function TermDetail(props) {
       <h4>3. Responsibility for Damages; Indemnity</h4>
       <p>{term.indemnity}</p>
       <h4>4. Payment</h4>
-      <p>Unless otherwise expressly provided for in this Contract, payment shall be made after completion of Services. Contractor
+      <p>{term.paymentTerm}Unless otherwise expressly provided for in this Contract, payment shall be made after completion of Services. Contractor
       shall submit invoices to the Department. Company payment terms are net {term.paymentDays} from the date of invoice. Contractor may not charge
       Company interest on an overdue payment.</p>
       <h4>4. Insurance</h4>
@@ -51,6 +51,14 @@ function TermDetail(props) {
       any advantage over the other by reason of being the drafter of any of the language of this Contract.</p>
       <p>This Contract takes effect only when signed by the authorized representatives of both OHSU and Contractor indicating their
       agreement with the above Services and terms and conditions.</p>
+      
+        <h2>COMPANY: MyCompany.Inc</h2>
+        <p>____________________<br/>Authorized Signature & Date</p>
+      
+   
+        <h2>COMPANY: {term.contractor}</h2>
+        <p>____________________<br/>Authorized Signature & Date</p>
+   
       
       <button onClick={ () => onClickingDelete(term.id) }>Delete </button>
       <button onClick={ onClickingEdit }>Edit </button>

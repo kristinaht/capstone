@@ -18,7 +18,9 @@ function AddTermForm(props) {
     event.preventDefault();
     props.onNewTermCreation();
 
-    const indemnityDefault = ""
+    const indemnityDefault = "Contractor shall be responsible for all damage to property, injury to persons, and loss, expense, inconvenience, and delay which may be caused by, or result from, the conduct of its work under this Contract, or from any act, ommision, or neglect of the Contractor, its subcontractors, or employees.";
+    const paymentTermDefault = "Unless otherwise expressly provided for in this Contract, payment shall be made after completion of Services. Contractor shall submit invoices to the Department.";
+    // const govLawDefault = 
    
     return firestore.collection('terms').add(
       {
@@ -29,6 +31,7 @@ function AddTermForm(props) {
         endDate: event.target.endDate.value,
         sow: event.target.sow.value,
         indemnity: event.target.indemnity.value,
+        paymentTerm: event.target.paymentTerm.value,
         paymentDays: event.target.paymentDays.value,
         glMin: event.target.glMin.value,
         glMax: event.target.glMax.value,
