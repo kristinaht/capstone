@@ -13,6 +13,17 @@ import { withFirestore, isLoaded } from 'react-redux-firebase';
 // import { PDFDownloadLink, Document, Page } from '@react-pdf/renderer';
 
 
+const termControlStyles = {
+  position: 'relative',
+  top: '20vh',
+  width: '80vw',
+  height: 'auto',
+  marginTop: '2vh',
+  marginLeft: '10vw',
+  marginRight: '10vw',
+  marginBottom: '10%'
+}
+
 class TermsControl extends React.Component {
   constructor(props) {
     super(props);
@@ -23,6 +34,7 @@ class TermsControl extends React.Component {
       editing: false
     };
   }
+
 
   // onSearchSubmission = (searchObject) => {
   //   console.log('onSearchSubmission');
@@ -157,11 +169,11 @@ class TermsControl extends React.Component {
     buttonText='Add Term';
   }
   return(
-    <React.Fragment>
+    <div style={termControlStyles}>
    
       { currentlyVisibleState }
       <button onClick={ this.handleClick }>{ buttonText }</button>
-    </React.Fragment>
+    </div>
   );
     }
   }
