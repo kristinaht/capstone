@@ -28,8 +28,7 @@ function TermDetail(props) {
       <h4>3. Responsibility for Damages; Indemnity</h4>
       <p>{term.indemnity}</p>
       <h4>4. Payment</h4>
-      <p>{term.paymentTerm}Unless otherwise expressly provided for in this Contract, payment shall be made after completion of Services. Contractor
-      shall submit invoices to the Department. Company payment terms are net {term.paymentDays} from the date of invoice. Contractor may not charge
+      <p>{term.paymentTerm}Company payment terms are net {term.paymentDays} from the date of invoice. Contractor may not charge
       Company interest on an overdue payment.</p>
       <h4>4. Insurance</h4>
       <p>4.1 Contractor shall maintain in force during the Term and at its own expense each of the insurances listed below:</p>
@@ -43,7 +42,7 @@ function TermDetail(props) {
         <li></li>
       </ul>
       <h4>4. Governing Law/Venue</h4>
-      <p>{ term.govLaw }</p>
+      <p>All matters arising out of or relating to this Contract shall be governed by and construed in accordance with the internal laws of the State of {term.govLaw} without giving effect to any choice or conflict of law provision or rule (whether of the State of {term.govLaw} or any other jurisdiction).</p>
       <h4>5. Entire Agreement</h4>
       <p>This Contract constitutes the entire agreement between the parties with respect to the subject matter herein
       and all prior or contemporaneous oral or written communications, understandings, or agreements between Contractor and OHSU
