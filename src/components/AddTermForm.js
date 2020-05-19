@@ -15,6 +15,7 @@ function AddTermForm(props) {
    
     return firestore.collection('terms').add(
       {
+        name: event.target.name.value,
         parties: event.target.parties.value,
         whereas: event.target.whereas.value,
         sow: event.target.sow.value,
@@ -25,6 +26,10 @@ function AddTermForm(props) {
   return(
     <React.Fragment>
       <form onSubmit={addTermToFirestore}>
+      <input
+        type='text'
+        name='name'
+        placeholder='Document name' />
         <input
         type='text'
         name='parties'
