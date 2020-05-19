@@ -7,7 +7,8 @@ function TermDetail(props) {
   return(
     <React.Fragment>
       <h1>Term Detail</h1>
-      <h2>{ term.parties }</h2>
+      <h2>{ term.name } </h2>
+      <h3>{ term.parties }</h3>
       <p>{ term.whereas }</p>
       <p>{ term.sow }</p>
       <p>{ term.govLaw }</p>

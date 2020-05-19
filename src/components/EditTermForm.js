@@ -28,6 +28,10 @@ function EditTermForm(props) {
      {/* <form formSubmissionHandler={props.handleEditTicketFormSubmission}> */}
      <input
         type='text'
+        name='name'
+        placeholder={props.term.name} />
+     <input
+        type='text'
         name='parties'
         placeholder={props.term.parties} />
         <input

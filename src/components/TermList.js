@@ -67,6 +67,7 @@ function TermList(props) {
             return <Term 
               whenTermClicked={ props.onTermSelection }
               name={ term.name }
+              parties={ term.parties }
               whereas={ term.whereas }
               sow={ term.sow } 
               govLaw={ term.govLaw }
