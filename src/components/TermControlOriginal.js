@@ -50,10 +50,8 @@ class TermsControl extends React.Component {
     this.props.firestore.get({ collection: 'terms', doc: id})
       .then((term) => {
         const firestoreTerm={
-          parties: term.get('parties'),
-          whereas: term.get('whereas'),
-          sow: term.get('sow'),
-          govLaw: term.get('govLaw'),
+          name: term.get('name'),
+          body: term.get('body'),
           id: term.id
         }
       this.setState({ selectedTerm: firestoreTerm });
