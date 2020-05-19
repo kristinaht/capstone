@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useFirestore } from 'react-redux-firebase';
+import { Form, Button } from 'react-bootstrap';
 
 function AddTermForm(props) {
 
@@ -8,7 +9,11 @@ function AddTermForm(props) {
   
   function addTermToFirestore(event) {
 
-   
+    const formStyles = {
+      display: 'block',
+      width: '100%',
+      borderRadius: '5px'
+    }
 
     event.preventDefault();
     props.onNewTermCreation();
@@ -25,29 +30,29 @@ function AddTermForm(props) {
   }
   return(
     <React.Fragment>
-      <form onSubmit={addTermToFirestore}>
-      <input
-        type='text'
-        name='name'
-        placeholder='Document name' />
-        <input
-        type='text'
-        name='parties'
-        placeholder='This contract is between...' />
-        <input
-        type='text'
-        name='whereas'
-        placeholder='WHEREAS' />
-        <input
-        type='text'
-        name='sow'
-        placeholder='Scope of Work' />
-        <input
-        type='text'
-        name='govLaw'
-        placeholder='Governing Law..' />
-        <button type='submit'>Add new terms</button>
-      </form>
+      <Form onSubmit={addTermToFirestore}>
+        <Form.Group>
+          <Form.Label>Document name:</Form.Label>
+          <Form.Control type='text' name='name' required/>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Parties:</Form.Label>
+          <Form.Control type='text' name='parties' placeholder='This contract is between...' required/>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>WHEREAS clause:</Form.Label>
+          <Form.Control type='text' name='whereas' placeholder='WHEREAS...' required/>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Scope of Work:</Form.Label>
+          <Form.Control type='text' name='sow' placeholder='...' required/>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Governing law:</Form.Label>
+          <Form.Control type='text' name='govLaw' placeholder='All matters and actions in this agreement shall be governed by...' required/>
+        </Form.Group>
+        <Button variant='outline-dark' type='submit'>Add new terms</Button>
+      </Form>
     </React.Fragment>
   )
 }
