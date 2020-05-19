@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Button, Navbar, Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
-function SearchForm(props) {
+function SearchBar(props) {
 
   function handleSearch(event) {
     event.preventDefault();

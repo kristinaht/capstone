@@ -11,9 +11,9 @@ function App() {
     <Router>
       <Header />
       <Switch>
-        <Route path='/signin'>
+        {/* <Route path='/signin'>
           <Signin />
-        </Route>
+        </Route> */}
         <Route path='/'>
           <TermControl />
         </Route>
