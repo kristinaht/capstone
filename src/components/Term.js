@@ -13,7 +13,9 @@ function Term(props){
     height: '200px',
     padding: '2%',
     margin: '1%',
-    boxShadow: '0 2px 4px 0 rgba(0,0,0,0.30)'
+    boxShadow: '0 2px 4px 0 rgba(0,0,0,0.30)',
+    color: '#929296',
+    fontSize: '2rem',
   }
 
 
