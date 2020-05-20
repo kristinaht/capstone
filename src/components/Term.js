@@ -8,7 +8,7 @@ function Term(props){
     <React.Fragment>
       <div onClick = {() => props.whenTermClicked(props.id)}>
         <p>{props.name}</p>
-        <p>{props.parties}</p>
+        <p>{props.contractor}</p>
         {/* <button onClick = {()=> props.whenTermClicked(props.id)}>DETAILS</button> */}
       </div>
       <hr/>
