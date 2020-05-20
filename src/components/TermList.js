@@ -13,13 +13,16 @@ function TermList(props) {
 
   const termListStyle = {
     // position: 'relative',
-    margin: 'auto',
-    top: '5vh',
-    // display: 'flex',
-    justifyContent: 'space-around',
-    flexWrap: 'wrap',
-    width: '80%',
-    backgroundColor: '#D3D3D3'
+    // margin: 'auto',
+    // top: '5vh',
+    display: 'flex',
+    // justifyContent: 'space-around',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    flexWrap: 'wrap'
+    // flexWrap: 'wrap',
+    // width: '80%',
+    // backgroundColor: '#D3D3D3'
   }
 
   
