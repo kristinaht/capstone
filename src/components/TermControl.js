@@ -134,7 +134,7 @@ class TermsControl extends React.Component {
     //   )
     // }
     // if ((isLoaded(auth)) && (auth.currentUser !== null)) {
-      let currentlyVisibleState = null;
+    let currentlyVisibleState = null;
     let buttonText = null;
 
   if(this.state.editing) {

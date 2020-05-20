@@ -14,9 +14,19 @@ function EditTermForm(props) {
     event.preventDefault();
     props.onEditTerm();
     const propertiesToUpdate = {
-      parties: event.target.parties.value,
-      whereas: event.target.whereas.value,
+      name: event.target.name.value,
+      contractor: event.target.contractor.value,
+      fee: event.target.fee.value,
+      startDate: event.target.startDate.value,
+      endDate: event.target.endDate.value,
       sow: event.target.sow.value,
+      indemnity: event.target.indemnity.value,
+      paymentTerm: event.target.paymentTerm.value,
+      paymentDays: event.target.paymentDays.value,
+      glMin: event.target.glMin.value,
+      glMax: event.target.glMax.value,
+      plMin: event.target.plMin.value,
+      plMax: event.target.plMax.value,
       govLaw: event.target.govLaw.value
     }
     return firestore.update({ collection: 'terms', doc: term.id}, propertiesToUpdate);
