@@ -67,9 +67,18 @@ function TermList(props) {
             return <Term 
               whenTermClicked={ props.onTermSelection }
               name={ term.name }
-              parties={ term.parties }
-              whereas={ term.whereas }
+              contractor={ term.contractor }
+              fee={ term.fee }
+              startDate={ term.startDate } 
+              endDate={ term.endDate } 
               sow={ term.sow } 
+              indemnity={ term.indemnity } 
+              paymentTerm={ term.paymentTerm } 
+              paymentDays={ term.paymentDays } 
+              glMin={ term.glMin } 
+              glMax={ term.glMax } 
+              plMin={ term.plMin } 
+              plMax={ term.plMax } 
               govLaw={ term.govLaw }
               id={ term.id }
               key={ term.id } />
