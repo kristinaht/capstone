@@ -13,16 +13,19 @@ function Home(){
     // justifyContent: 'space-around',
     flexWrap: 'wrap',
     width: '100%',
-    backgroundColor: '#D3D3D3',
-
-  
-
+    // backgroundColor: '#D3D3D3',
   }
 
+  const hHomeStyle = {
+    padding: '5',
+    border: '3px solid #388087'
+  }
   return (
     <React.Fragment>
       <div style={termListStyle}>
-        <h1>Welcome!</h1>
+        <div >
+          <h1 style={hHomeStyle}>Welcome!</h1>
+        </div>
       </div>
     </React.Fragment>
   );
