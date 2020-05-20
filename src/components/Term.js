@@ -7,21 +7,21 @@ import { Card } from 'react-bootstrap';
 function Term(props){
 
   const termStyle = {
-    textAlign: 'center',
-    border: '2px solid rgb(70,108,82)',
+    textAlign: 'justify',
+    border: '2px solid white',
     width: '400px',
-    height: '400px',
+    height: '200px',
     padding: '2%',
     margin: '1%',
-    boxShadow: '0 2px 4px 0 rgba(0,0,0,0.10)'
+    boxShadow: '0 2px 4px 0 rgba(0,0,0,0.30)'
   }
 
 
   return(
     <React.Fragment>
       <Card style={termStyle} onClick = {() => props.whenTermClicked(props.id)}>
-        <p>{props.name}</p>
-        <p>{props.contractor}</p>
+        <h2>Contractor: {props.contractor}</h2>
+        <h4>Contracted Amount: ${props.fee}</h4>
         {/* <button onClick = {()=> props.whenTermClicked(props.id)}>DETAILS</button> */}
       </Card>
       <hr/>
