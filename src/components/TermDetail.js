@@ -1,8 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Button } from 'react-bootstrap';
+import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import ReactPDF from '@react-pdf/renderer';
 
 function TermDetail(props) {
   const { term, onClickingDelete, onClickingEdit } = props;
+
+    const styles = StyleSheet.create({
+    page: {
+      flexDirection: 'row',
+      backgroundColor: '#E4E4E4'
+    },
+    section: {
+      margin: 10,
+      padding: 10,
+      flexGrow: 1
+    }
+  });
+  
+
+
+  const myDocument = (term) => (
+    <Document>
+      <Page size="A4" style={styles.page}>
+        <View style={styles.section}>
+          {term}
+        </View>
+        <View style={styles.section}>
+          <Text>Section #2</Text>
+        </View>
+      </Page>
+    </Document>
+  );
 
   return(
     <React.Fragment>
@@ -10,9 +41,9 @@ function TermDetail(props) {
       <h2>{ term.name } </h2>
       <p>This Professional Services Contract ("Contract") is between MyCompany, Inc, an Oregon corporation located at 3434 NW Some Address, Portland, OR 97209("Company") and {term.contractor} ("Contractor"). The parties agree as follows:</p>
       <h3>Section A: Fees and Term</h3>
-      <p>Company shall pay Contractor a sum not to exceed ${term.fee}, which includes all travel. administrative and other expenxes. Company shall pay Contractor in accordance with Section G.2, below.</p><br/>
+      <p>Company shall pay Contractor a sum not to exceed ${term.fee}, which includes all travel. administrative and other expenxes. Company shall pay Contractor in accordance with Section G.2, below.</p>
       <p>The Contract takes effect on {term.startDate}, and unless terminated earlier as provided below, continues through {term.endDate} ("Term").</p>
-      <h4>Section B: Scope of Work</h4>
+      <h3>Section B: Scope of Work</h3>
       <p>{ term.sow }</p>
       <h3>Section C: Terms and Conditions</h3>
       <h4>1. Services</h4>
@@ -39,7 +70,6 @@ function TermDetail(props) {
         <li>Professional Liability insurance with a combined single limit of at least ${term.plMin}/occurrence and ${term.plMax} annual
         aggregate for damages caused by error, omission, or negligent acts related to any professional services provided under
         this Contract.</li>
-        <li></li>
       </ul>
       <h4>4. Governing Law/Venue</h4>
       <p>All matters arising out of or relating to this Contract shall be governed by and construed in accordance with the internal laws of the State of {term.govLaw} without giving effect to any choice or conflict of law provision or rule (whether of the State of {term.govLaw} or any other jurisdiction).</p>
@@ -52,15 +82,16 @@ function TermDetail(props) {
       agreement with the above Services and terms and conditions.</p>
       
         <h2>COMPANY: MyCompany.Inc</h2>
-        <p>____________________<br/>Authorized Signature & Date</p>
+        <p>______________________________<br/>Authorized Signature & Date</p>
       
    
         <h2>COMPANY: {term.contractor}</h2>
-        <p>____________________<br/>Authorized Signature & Date</p>
+        <p>______________________________<br/>Authorized Signature & Date</p>
    
       
       <button onClick={ () => onClickingDelete(term.id) }>Delete </button>
       <button onClick={ onClickingEdit }>Edit </button>
+      <Button onClick={myDocument}>Export</Button>
     </React.Fragment>
   )
 }
@@ -70,4 +101,5 @@ TermDetail.propTypes = {
   onClickingDelete: PropTypes.func
 }
 
+// ReactPDF.render(<TermDetail />);
 export default TermDetail;
