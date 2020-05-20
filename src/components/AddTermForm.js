@@ -10,6 +10,7 @@ function AddTermForm(props) {
     width: '100%',
     borderRadius: '5px'
   }
+  
   const firestore = useFirestore();
   
   const indemnityDefault = "Contractor shall be responsible for all damage to property, injury to persons, and loss, expense, inconvenience, and delay which may be caused by, or result from, the conduct of its work under this Contract, or from any act, omission, or neglect of the Contractor, its subcontractors, or employees.";

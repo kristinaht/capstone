@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as a from './../actions';
 import { withFirestore, isLoaded } from 'react-redux-firebase';
-// import SearchBar from './SearchBar';
 // import { Container, Button } from 'react-bootstrap';
 // import { PDFDownloadLink, Document, Page } from '@react-pdf/renderer';
 
@@ -28,33 +27,10 @@ class TermsControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // searched: false,
-      // searchName: null,
       selectedTerm: null,
       editing: false
     };
   }
-
-
-  // onSearchSubmission = (searchObject) => {
-  //   console.log('onSearchSubmission');
-  //   const { name } = searchObject;
-  //   let nameQuery = (name !== "") ? name : "";
-  //   this.setState({searched: true, searchName: nameQuery});
-  // }
-
-  // resetTermList = () => {
-  //   this.setState({searched: false, searchName: null});
-  // }
-
-  // showButton = () => {
-  //   return (this.state.searched) ? <Button variant="outline-dark" onClick={this.resetTermList}>Show all contracts</Button> : null
-  // }
-
-  // showReturnToTermsButton = () => {
-  //   return (this.state.editingFormVisible || this.state.newTermFormVisible) ? <Button variant="outline-dark" onClick={() => this.handleClick()}>Return to Terms List</Button>
-  //   : null
-  // }
 
   handleClick = () => {
     if(this.state.selectedTerm != null){
@@ -84,9 +60,19 @@ class TermsControl extends React.Component {
     this.props.firestore.get({ collection: 'terms', doc: id})
       .then((term) => {
         const firestoreTerm={
-          parties: term.get('parties'),
-          whereas: term.get('whereas'),
+          name: term.get('name'),
+          contractor: term.get('contractor'),
+          fee: term.get('fee'),
+          startDate: term.get('startDate'),
+          endDate: term.get('endDate'),
           sow: term.get('sow'),
+          indemnity: term.get('indemnity'),
+          paymentTerm: term.get('paymentTerm'),
+          paymentDays: term.get('paymentDays'),
+          glMin: term.get('glMin'),
+          glMax: term.get('glMax'),
+          plMin: term.get('plMin'),
+          plMax: term.get('plMax'),
           govLaw: term.get('govLaw'),
           id: term.id
         }
@@ -141,12 +127,7 @@ class TermsControl extends React.Component {
     currentlyVisibleState = <EditTermForm term={ this.state.selectedTerm } onEditTerm={ this.handleEditingTerm } />
     buttonText='Return to Terms List';
   } 
-  // else if (this.state.searchName !== null) {
-  //   let termList;
-  //       termList = this.props.firestore.filter((term) => {
-  //         return term.name.includes(this.state.searchName);
-  //       });
-  // }
+
   
   else if(this.state.selectedTerm != null) {
     currentlyVisibleState = 

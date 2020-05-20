@@ -8,7 +8,7 @@ function TermDetail(props) {
     <React.Fragment>
       <h1>Document Detail</h1>
       <h2>{ term.name } </h2>
-      <p>This Professional Services Contract ("Contract") is between MyCompany, Inc, an Oregon corporation located at 3434 NW Some Address, Portland, OR 97209("Company") and <em>{term.contractor}</em>("Contractor"). The parties agree as follows:</p>
+      <p>This Professional Services Contract ("Contract") is between MyCompany, Inc, an Oregon corporation located at 3434 NW Some Address, Portland, OR 97209("Company") and {term.contractor} ("Contractor"). The parties agree as follows:</p>
       <h3>Section A: Fees and Term</h3>
       <p>Company shall pay Contractor a sum not to exceed ${term.fee}, which includes all travel. administrative and other expenxes. Company shall pay Contractor in accordance with Section G.2, below.</p><br/>
       <p>The Contract takes effect on {term.startDate}, and unless terminated earlier as provided below, continues through {term.endDate} ("Term").</p>
