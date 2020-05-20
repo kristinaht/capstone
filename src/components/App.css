@@ -2,7 +2,7 @@
 body {
   /* font-family: 'Yanone Kaffeesatz', sans-serif; */
   font-family: 'Fira Sans', sans-serif;
-  background-color: white;
+  background-color:' radial-gradient(#e5e5e5, #ffff, #e5e5e5)'
   /* background-color: #E9E9E9; */
   /* background-color: #F2D388; */
 }
@@ -14,7 +14,9 @@ body {
 }
 
 
-
+.hover:hover{
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5) !important;
+}
 
 .App {
   text-align: center;

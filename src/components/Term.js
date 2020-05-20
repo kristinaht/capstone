@@ -19,7 +19,7 @@ function Term(props){
 
   return(
     <React.Fragment>
-      <Card style={termStyle} onClick = {() => props.whenTermClicked(props.id)}>
+      <Card className='hover' style={termStyle} onClick = {() => props.whenTermClicked(props.id)}>
         <h2>Contractor: {props.contractor}</h2>
         <h4>Contracted Amount: ${props.fee}</h4>
         {/* <button onClick = {()=> props.whenTermClicked(props.id)}>DETAILS</button> */}
