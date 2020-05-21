@@ -15,7 +15,8 @@ function TermList(props) {
         top: '4vh',
         display: 'flex',
         justifyContent: 'space-between',
-        flexWrap: 'wrap',   
+        flexWrap: 'wrap', 
+        // transform: 'rotateX(150deg) ' 
   }
 
   
@@ -62,7 +63,6 @@ function TermList(props) {
       </React.Fragment>
     )
   }
-
 }
 
 export default TermList;

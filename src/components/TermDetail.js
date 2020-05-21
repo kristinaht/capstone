@@ -1,16 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
-// import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
-// import { PDFDownloadLink } from '@react-pdf/renderer';
-// import ReactPDF from '@react-pdf/renderer';
 import { Card } from 'react-bootstrap';
 
 function TermDetail(props) {
 
   const termStyle = {
     textAlign: 'justify',
-    border: '2px solid white',
+    border: '5px solid',
+    border: '#10343d',
     width: '90%',
     padding: '2%',
     margin: '1%',

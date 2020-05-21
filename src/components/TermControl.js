@@ -125,7 +125,7 @@ class TermsControl extends React.Component {
 
   if(this.state.editing) {
     currentlyVisibleState = <EditTermForm term={ this.state.selectedTerm } onEditTerm={ this.handleEditingTerm } />
-    buttonText='Return to Terms List';
+    buttonText='View All Contracts';
   } 
 
   
@@ -136,12 +136,12 @@ class TermsControl extends React.Component {
       onClickingDelete = { this.handleDeletingTerm }
       onClickingEdit = { this.handleEditClick }
       onClickingExport = { this.handleExporting } />
-    buttonText='Return to Terms List';
+    buttonText='View All Contracts';
   } else if (this.props.formVisible) {
     currentlyVisibleState =
     <AddTermForm
       onNewTermCreation={ this.handleAddingNewTermToList } />
-    buttonText='Return to Terms List';
+    buttonText='View All Contracts';
   } else {
     currentlyVisibleState =
     <TermList

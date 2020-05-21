@@ -8,6 +8,7 @@ function Term(props){
 
   const termStyle = {
     // display: 'flex',
+    // backgroundColor: '#491823c0',
     textAlign: 'justify',
     border: '2px solid white',
     width: '400px',
