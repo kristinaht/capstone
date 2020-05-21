@@ -18,8 +18,9 @@ function AddTermForm(props) {
     justifyContent: 'space-between',
     textAlign: 'justify',
     border: '2px solid white',
-    width: '400px',
-    height: '400px',
+    width: '80%',
+    // width: '400px',
+    // height: '400px',
     padding: '2%',
     margin: '1%',
     boxShadow: '0 2px 4px 0 rgba(0,0,0,0.30)',
@@ -27,19 +28,7 @@ function AddTermForm(props) {
     fontSize: '2rem',
   }
 
-  const textAreaCard = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    textAlign: 'justify',
-    border: '2px solid white',
-    width: '91%',
-    // height: '200px',
-    padding: '2%',
-    margin: '1%',
-    boxShadow: '0 2px 4px 0 rgba(0,0,0,0.30)',
-    color: '#929296',
-    fontSize: '2rem',
-  }
+ 
 
   const firestore = useFirestore();
   
@@ -78,9 +67,8 @@ function AddTermForm(props) {
   return(
     <React.Fragment>
       <Form onSubmit={addTermToFirestore}>
-      <Row>
-        <Col>
-        <Card className='fleft' style={cardStyle}>
+
+        <Card style={cardStyle}>
           <Form.Group>
             <Form.Label style={formStyles}>Document name:</Form.Label>
             <Form.Control style={formStyles} type='text' name='name' required/>
@@ -94,11 +82,10 @@ function AddTermForm(props) {
           <Form.Control style={formStyles} type='text' name='endDate' placeholder='...' required/>
           </Form.Group>
         </Card>
-        </Col>
-        <Col>
+   
         
         
-        <Card className='fleft' style={cardStyle}>
+        <Card style={cardStyle}>
         <Form.Group>
           <Form.Label style={formStyles} >What is the total amount to be paid to the Contractor?</Form.Label>
           <Form.Control style={formStyles} type='text' name='fee' placeholder='Contract fee amount' required/>
@@ -110,7 +97,7 @@ function AddTermForm(props) {
         </Card>
 
         
-        <Card className='fleft' style={cardStyle}>
+        <Card style={cardStyle}>
         <Form.Group>
           <Form.Label style={formStyles}>Minimum GL insurance level per occurrence</Form.Label>
           <textarea style={formStyles} type='text' name='glMin' defaultValue='1,000,000' required/>
@@ -129,17 +116,15 @@ function AddTermForm(props) {
         </Form.Group>
         </Card>
       
-        </Col>
-        </Row>
+       
     
-    
-        <Card style={textAreaCard}>
+        <Card style={cardStyle}>
         <Form.Group>
           <Form.Label style={formStyles}>Scope of Work:</Form.Label>
           <textarea  style={formStyles} type='text' name='sow' placeholder='...' required/>
         {/* </Form.Group> */}
         {/* </Card>
-        <Card style={textAreaCard}> */}
+        <Card style={cardStyle}> */}
         {/* <Form.Group> */}
           <Form.Label style={formStyles}>Indemnification clause:</Form.Label>
           <textarea className='textarea' style={formStyles} type='text' name='indemnity' defaultValue={indemnityDefault} required/>
