@@ -4,22 +4,18 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase';
 import { Container, Card, Button } from 'react-bootstrap';
-// import MyDocument from './MyDocument';
-// import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+
 
 function TermList(props) {
 
  
 
   const termListStyle = {
-        // position: 'relative',
         margin: 'auto',
         top: '4vh',
         display: 'flex',
         justifyContent: 'space-between',
-        flexWrap: 'wrap',
-        // width: '80%',
-        
+        flexWrap: 'wrap',   
   }
 
   

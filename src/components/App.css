@@ -58,7 +58,7 @@ body {
 
 
 .myButton {
-	box-shadow: 0px 10px 14px -7px #276873;
+	/* box-shadow: 0px 10px 14px -7px #276873; */
 	/* background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%); */
   /* background-color:#599bb3; */
   background-color: rgb(190, 190, 163);
@@ -72,11 +72,11 @@ body {
 	font-weight:bold;
 	padding:13px 32px;
 	text-decoration:none;
-  text-shadow:0px 1px 0px #3d768a;
+  /* text-shadow:0px 1px 0px #3d768a; */
   margin-bottom: 30px;
 }
 .myButton:hover {
-	background:linear-gradient(to bottom, #767764 5%, #6b6a46 100%);
+	/* background:linear-gradient(to bottom, #767764 5%, #6b6a46 100%); */
 	background-color:rgb(97, 97, 85);
 }
 .myButton:active {
