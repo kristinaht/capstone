@@ -8,8 +8,32 @@ body {
   /* background-color: #F2D388; */
 }
 
+.fragment {
+  margin: auto;
+}
+
+.text {
+  width: 100%;
+	height: 40px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+  position: center;
+  margin-bottom: 15px;
+  font-size: 25px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  color: pink
+}
+
 .textarea {
-  width: '1000px';
+  width: 100%;
+	height: 120px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+  position: center;
+  margin-bottom: 15px;
+  font-size: 25px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  color: pink
 }
 
 .fleft {
@@ -31,6 +55,35 @@ body {
 .hover:hover{
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5) !important;
 }
+
+
+.myButton {
+	box-shadow: 0px 10px 14px -7px #276873;
+	/* background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%); */
+  /* background-color:#599bb3; */
+  background-color: rgb(190, 190, 163);
+  
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:13px 32px;
+	text-decoration:none;
+  text-shadow:0px 1px 0px #3d768a;
+  margin-bottom: 30px;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #767764 5%, #6b6a46 100%);
+	background-color:rgb(97, 97, 85);
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
 
 .App {
   text-align: center;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useFirestore } from 'react-redux-firebase';
-import { Form, Button, Card, CardDeck } from 'react-bootstrap';
+import { Container, Form, Button, Card, CardDeck } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 
@@ -9,18 +9,15 @@ function AddTermForm(props) {
 
   const formStyles = {
     display: 'flex',
-    width: '100%',
-    borderRadius: '5px'
+    // width: '80%',
+    borderRadius: '5px',
   }
   
   const cardStyle ={
     display: 'block',
-    justifyContent: 'space-between',
     textAlign: 'justify',
     border: '2px solid white',
-    width: '80%',
-    // width: '400px',
-    // height: '400px',
+    width: '50%',
     padding: '2%',
     margin: '1%',
     boxShadow: '0 2px 4px 0 rgba(0,0,0,0.30)',
@@ -28,7 +25,6 @@ function AddTermForm(props) {
     fontSize: '2rem',
   }
 
- 
 
   const firestore = useFirestore();
   
@@ -38,13 +34,9 @@ function AddTermForm(props) {
 
   function addTermToFirestore(event) {
 
-
-
-
     event.preventDefault();
     props.onNewTermCreation();
 
-   
     return firestore.collection('terms').add(
       {
         name: event.target.name.value,
@@ -54,7 +46,6 @@ function AddTermForm(props) {
         endDate: event.target.endDate.value,
         sow: event.target.sow.value,
         indemnity: event.target.indemnity.value,
-        // paymentTerm: event.target.paymentTerm.value,
         paymentDays: event.target.paymentDays.value,
         glMin: event.target.glMin.value,
         glMax: event.target.glMax.value,
@@ -66,77 +57,65 @@ function AddTermForm(props) {
   }
   return(
     <React.Fragment>
+     
       <Form onSubmit={addTermToFirestore}>
 
         <Card style={cardStyle}>
           <Form.Group>
-            <Form.Label style={formStyles}>Document name:</Form.Label>
-            <Form.Control style={formStyles} type='text' name='name' required/>
+            <Form.Label >Document name:</Form.Label>
+            <Form.Control className='text' style={formStyles} type='text' name='name' required/>
           {/* </Form.Group>
           <Form.Group> */}
-            <Form.Label style={formStyles} >Who are you contracting with? Enter Contractor name:</Form.Label>
-            <Form.Control style={formStyles} type='text' name='contractor' placeholder='Contractor name...' required/>
-            <Form.Label style={formStyles} >Contract start date:</Form.Label>
-          <Form.Control style={formStyles} type='text' name='startDate' placeholder='...' required/>
-          <Form.Label style={formStyles} >Contract end date:</Form.Label>
-          <Form.Control style={formStyles} type='text' name='endDate' placeholder='...' required/>
+            <Form.Label>Contractor name:</Form.Label>
+            <Form.Control className='text' style={formStyles} type='text' name='contractor' placeholder='...' required/>
+            <Form.Label>Contract start date:</Form.Label>
+          <Form.Control className='text' style={formStyles} type='text' name='startDate' placeholder='...' required/>
+          <Form.Label>Contract end date:</Form.Label>
+          <Form.Control className='text' style={formStyles} type='text' name='endDate' placeholder='...' required/>
           </Form.Group>
         </Card>
-   
-        
-        
         <Card style={cardStyle}>
         <Form.Group>
-          <Form.Label style={formStyles} >What is the total amount to be paid to the Contractor?</Form.Label>
-          <Form.Control style={formStyles} type='text' name='fee' placeholder='Contract fee amount' required/>
+          <Form.Label>What is the total amount to be paid to the Contractor?</Form.Label>
+          <Form.Control className='text' style={formStyles} type='text' name='fee' placeholder='...' required/>
         </Form.Group>
         <Form.Group>
-          <Form.Label style={formStyles}>Payment is issued how many days after receiving an invoice??</Form.Label>
-          <Form.Control style={formStyles} type='text' name='paymentDays' defaultValue='45' required/>
+          <Form.Label>Payment is issued how many days after receiving an invoice??</Form.Label>
+          <Form.Control className='text' style={formStyles} type='text' name='paymentDays' defaultValue='45' required/>
         </Form.Group>
         </Card>
-
-        
         <Card style={cardStyle}>
         <Form.Group>
-          <Form.Label style={formStyles}>Minimum GL insurance level per occurrence</Form.Label>
-          <textarea style={formStyles} type='text' name='glMin' defaultValue='1,000,000' required/>
+          <Form.Label>Minimum GL insurance level per occurrence</Form.Label>
+          <textarea className='text' style={formStyles} type='text' name='glMin' defaultValue='1,000,000' required/>
         </Form.Group>
         <Form.Group>
-          <Form.Label style={formStyles}>Annual aggregate GL insurance</Form.Label>
-          <textarea style={formStyles} type='text' name='glMax' defaultValue='3,000,000' required/>
+          <Form.Label>Annual aggregate GL insurance</Form.Label>
+          <textarea className='text' style={formStyles} type='text' name='glMax' defaultValue='3,000,000' required/>
         </Form.Group>
         <Form.Group>
-          <Form.Label style={formStyles}>Minimum PL insurance level per occurrence</Form.Label>
-          <textarea style={formStyles} type='text' name='plMin' defaultValue='3,000,000' required/>
+          <Form.Label>Minimum PL insurance level per occurrence</Form.Label>
+          <textarea className='text' style={formStyles} type='text' name='plMin' defaultValue='3,000,000' required/>
         </Form.Group>
         <Form.Group>
-          <Form.Label style={formStyles}>Annual aggregate PL insurance</Form.Label>
-          <textarea style={formStyles} type='text' name='plMax' defaultValue='5,000,000' required/>
+          <Form.Label>Annual aggregate PL insurance</Form.Label>
+          <textarea className='text' style={formStyles} type='text' name='plMax' defaultValue='5,000,000' required/>
         </Form.Group>
         </Card>
-      
-       
-    
         <Card style={cardStyle}>
         <Form.Group>
           <Form.Label style={formStyles}>Scope of Work:</Form.Label>
-          <textarea  style={formStyles} type='text' name='sow' placeholder='...' required/>
-        {/* </Form.Group> */}
-        {/* </Card>
-        <Card style={cardStyle}> */}
-        {/* <Form.Group> */}
+          <textarea  className='textarea' style={formStyles} type='text' name='sow' placeholder='...' required/>
           <Form.Label style={formStyles}>Indemnification clause:</Form.Label>
           <textarea className='textarea' style={formStyles} type='text' name='indemnity' defaultValue={indemnityDefault} required/>
-        {/* </Form.Group>
-        <Form.Group> */}
-          <Form.Label style={formStyles}>Governing law:</Form.Label>
-          <Form.Control style={formStyles} type='text' name='govLaw' placeholder='Enter State here...' required/>
+          <Form.Label style={formStyles}>Governing law(State):</Form.Label>
+          <Form.Control className='text' style={formStyles} type='text' name='govLaw' placeholder='...' required/>
         </Form.Group>
         </Card>
       
-        <Button style={formStyles} variant='outline-dark' type='submit'>Add new terms</Button>
+        <Button style={formStyles} variant='outline-success' type='submit'>Add new terms</Button>
       </Form>
+     
     </React.Fragment>
   )
 }

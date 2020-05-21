@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as a from './../actions';
 import { withFirestore, isLoaded } from 'react-redux-firebase';
-// import { Container, Button } from 'react-bootstrap';
+import {  Button } from 'react-bootstrap';
 import { PDFDownloadLink, Document, Page } from '@react-pdf/renderer';
 
 
@@ -17,7 +17,7 @@ const termControlStyles = {
   top: '20vh',
   width: '80vw',
   height: 'auto',
-  marginTop: '2vh',
+  // marginTop: '2vh',
   marginLeft: '10vw',
   marginRight: '10vw',
   marginBottom: '10%'
@@ -147,13 +147,13 @@ class TermsControl extends React.Component {
     <TermList
       termList={ this.props.masterTermList }
       onTermSelection={ this.handleTermSelection } />
-    buttonText='Add Term';
+    buttonText='+ Create New Contract';
   }
   return(
     <div style={termControlStyles}>
-   
+ 
+      <button className='myButton' onClick={ this.handleClick }>{ buttonText }</button>
       { currentlyVisibleState }
-      <button onClick={ this.handleClick }>{ buttonText }</button>
     </div>
   );
     }
