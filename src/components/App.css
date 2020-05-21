@@ -8,12 +8,17 @@ body {
   /* background-color: #F2D388; */
 }
 
+.textarea {
+  width: '1000px';
+}
+
 .fleft {
   float: left;
 }
 
 .fright {
   float: right;
+  clear: both;
 }
 
 .footer {

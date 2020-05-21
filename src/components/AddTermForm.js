@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useFirestore } from 'react-redux-firebase';
 import { Form, Button, Card, CardDeck } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
 function AddTermForm(props) {
 
@@ -16,7 +18,21 @@ function AddTermForm(props) {
     justifyContent: 'space-between',
     textAlign: 'justify',
     border: '2px solid white',
-    // width: '400px',
+    width: '400px',
+    height: '400px',
+    padding: '2%',
+    margin: '1%',
+    boxShadow: '0 2px 4px 0 rgba(0,0,0,0.30)',
+    color: '#929296',
+    fontSize: '2rem',
+  }
+
+  const textAreaCard = {
+    display: 'flex',
+    justifyContent: 'space-between',
+    textAlign: 'justify',
+    border: '2px solid white',
+    width: '91%',
     // height: '200px',
     padding: '2%',
     margin: '1%',
@@ -62,18 +78,27 @@ function AddTermForm(props) {
   return(
     <React.Fragment>
       <Form onSubmit={addTermToFirestore}>
-    
-        <Card style={cardStyle}>
+      <Row>
+        <Col>
+        <Card className='fleft' style={cardStyle}>
           <Form.Group>
             <Form.Label style={formStyles}>Document name:</Form.Label>
             <Form.Control style={formStyles} type='text' name='name' required/>
-          </Form.Group>
-          <Form.Group>
+          {/* </Form.Group>
+          <Form.Group> */}
             <Form.Label style={formStyles} >Who are you contracting with? Enter Contractor name:</Form.Label>
             <Form.Control style={formStyles} type='text' name='contractor' placeholder='Contractor name...' required/>
+            <Form.Label style={formStyles} >Contract start date:</Form.Label>
+          <Form.Control style={formStyles} type='text' name='startDate' placeholder='...' required/>
+          <Form.Label style={formStyles} >Contract end date:</Form.Label>
+          <Form.Control style={formStyles} type='text' name='endDate' placeholder='...' required/>
           </Form.Group>
         </Card>
-        <Card style={cardStyle}>
+        </Col>
+        <Col>
+        
+        
+        <Card className='fleft' style={cardStyle}>
         <Form.Group>
           <Form.Label style={formStyles} >What is the total amount to be paid to the Contractor?</Form.Label>
           <Form.Control style={formStyles} type='text' name='fee' placeholder='Contract fee amount' required/>
@@ -83,36 +108,9 @@ function AddTermForm(props) {
           <Form.Control style={formStyles} type='text' name='paymentDays' defaultValue='45' required/>
         </Form.Group>
         </Card>
-        <Card style={cardStyle}>
-        <Form.Group>
-          <Form.Label style={formStyles} >Contract start date:</Form.Label>
-          <Form.Control style={formStyles} type='text' name='startDate' placeholder='...' required/>
-        </Form.Group>
-        <Form.Group>
-          <Form.Label style={formStyles} >Contract end date:</Form.Label>
-          <Form.Control style={formStyles} type='text' name='endDate' placeholder='...' required/>
-        </Form.Group>
-        </Card>
-        <Card style={cardStyle}>
-        <Form.Group>
-          <Form.Label style={formStyles}>Scope of Work:</Form.Label>
-          <Form.Control style={formStyles} type='text' name='sow' placeholder='...' required/>
-        </Form.Group>
-        </Card>
-        <Card style={cardStyle}>
-        <Form.Group>
-          <Form.Label style={formStyles}>Indemnification clause:</Form.Label>
-          <textarea style={formStyles} type='text' name='indemnity' defaultValue={indemnityDefault} required/>
-        </Form.Group>
-        <Form.Group>
-          <Form.Label style={formStyles}>Governing law:</Form.Label>
-          <Form.Control style={formStyles} type='text' name='govLaw' placeholder='Enter State here...' required/>
-        </Form.Group>
-        </Card>
-        <Card style={cardStyle}>
+
         
-        </Card>
-        <Card style={cardStyle}>
+        <Card className='fleft' style={cardStyle}>
         <Form.Group>
           <Form.Label style={formStyles}>Minimum GL insurance level per occurrence</Form.Label>
           <textarea style={formStyles} type='text' name='glMin' defaultValue='1,000,000' required/>
@@ -128,6 +126,27 @@ function AddTermForm(props) {
         <Form.Group>
           <Form.Label style={formStyles}>Annual aggregate PL insurance</Form.Label>
           <textarea style={formStyles} type='text' name='plMax' defaultValue='5,000,000' required/>
+        </Form.Group>
+        </Card>
+      
+        </Col>
+        </Row>
+    
+    
+        <Card style={textAreaCard}>
+        <Form.Group>
+          <Form.Label style={formStyles}>Scope of Work:</Form.Label>
+          <textarea  style={formStyles} type='text' name='sow' placeholder='...' required/>
+        {/* </Form.Group> */}
+        {/* </Card>
+        <Card style={textAreaCard}> */}
+        {/* <Form.Group> */}
+          <Form.Label style={formStyles}>Indemnification clause:</Form.Label>
+          <textarea className='textarea' style={formStyles} type='text' name='indemnity' defaultValue={indemnityDefault} required/>
+        {/* </Form.Group>
+        <Form.Group> */}
+          <Form.Label style={formStyles}>Governing law:</Form.Label>
+          <Form.Control style={formStyles} type='text' name='govLaw' placeholder='Enter State here...' required/>
         </Form.Group>
         </Card>
       

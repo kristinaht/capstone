@@ -7,7 +7,7 @@ import { Card } from 'react-bootstrap';
 function Term(props){
 
   const termStyle = {
-    display: 'flex',
+    // display: 'flex',
     textAlign: 'justify',
     border: '2px solid white',
     width: '400px',
