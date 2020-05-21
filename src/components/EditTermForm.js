@@ -25,7 +25,7 @@ function EditTermForm(props) {
       endDate: event.target.endDate.value,
       sow: event.target.sow.value,
       indemnity: event.target.indemnity.value,
-      paymentTerm: event.target.paymentTerm.value,
+      // paymentTerm: event.target.paymentTerm.value,
       paymentDays: event.target.paymentDays.value,
       glMin: event.target.glMin.value,
       glMax: event.target.glMax.value,
@@ -68,12 +68,9 @@ function EditTermForm(props) {
         <Form.Label style={formStyles}>Add Indemnification clause:</Form.Label>
         <textarea style={formStyles} type='text' name='indemnity' defaultValue={term.indemnity} required/>
       </Form.Group>
+ 
       <Form.Group>
-        <Form.Label style={formStyles}>Template Payment Term clause:</Form.Label>
-        <textarea style={formStyles} type='text' name='paymentTerm' defaultValue={term.paymentTerm}/>
-      </Form.Group>
-      <Form.Group>
-        <Form.Label style={formStyles}>How many days after invoice is received do you issue payment?</Form.Label>
+        <Form.Label style={formStyles}>Payment is issued how many days after receiving an invoice?</Form.Label>
         <Form.Control style={formStyles} type='text' name='paymentDays' defaultValue={term.paymentDays} required/>
       </Form.Group>
       <Form.Group>

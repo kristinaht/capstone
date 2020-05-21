@@ -48,7 +48,7 @@ function TermDetail(props) {
         <h4>3. Responsibility for Damages; Indemnity</h4>
         <p>{term.indemnity}</p>
         <h4>4. Payment</h4>
-        <p>{term.paymentTerm}Company payment terms are net {term.paymentDays} from the date of invoice. Contractor may not charge
+        <p>Unless otherwise expressly provided for in this Contract, payment shall be made after completion of Services. Contractor shall submit invoices to the Department. Company payment terms are net {term.paymentDays} from the date of invoice. Contractor may not charge
         Company interest on an overdue payment.</p>
         <h4>4. Insurance</h4>
         <p>4.1 Contractor shall maintain in force during the Term and at its own expense each of the insurances listed below:</p>

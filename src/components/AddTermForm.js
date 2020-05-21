@@ -1,32 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useFirestore } from 'react-redux-firebase';
-import { Form, Button, Card } from 'react-bootstrap';
+import { Form, Button, Card, CardDeck } from 'react-bootstrap';
 
 function AddTermForm(props) {
 
   const formStyles = {
-    display: 'block',
+    display: 'flex',
     width: '100%',
     borderRadius: '5px'
   }
   
   const cardStyle ={
-    display: 'flex',
-    justifyContent: 'space-around',
-    // justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    flexWrap: 'wrap',
-
-    // textAlign: 'justify',
+    display: 'block',
+    justifyContent: 'space-between',
+    textAlign: 'justify',
     border: '2px solid white',
     // width: '400px',
     // height: '200px',
-    // padding: '2%',
-    // margin: '1%',
+    padding: '2%',
+    margin: '1%',
     boxShadow: '0 2px 4px 0 rgba(0,0,0,0.30)',
-    // color: '#929296',
-    // fontSize: '2rem',
+    color: '#929296',
+    fontSize: '2rem',
   }
 
   const firestore = useFirestore();
@@ -53,7 +49,7 @@ function AddTermForm(props) {
         endDate: event.target.endDate.value,
         sow: event.target.sow.value,
         indemnity: event.target.indemnity.value,
-        paymentTerm: event.target.paymentTerm.value,
+        // paymentTerm: event.target.paymentTerm.value,
         paymentDays: event.target.paymentDays.value,
         glMin: event.target.glMin.value,
         glMax: event.target.glMax.value,
@@ -66,6 +62,7 @@ function AddTermForm(props) {
   return(
     <React.Fragment>
       <Form onSubmit={addTermToFirestore}>
+    
         <Card style={cardStyle}>
           <Form.Group>
             <Form.Label style={formStyles}>Document name:</Form.Label>
@@ -78,17 +75,21 @@ function AddTermForm(props) {
         </Card>
         <Card style={cardStyle}>
         <Form.Group>
-          <Form.Label style={formStyles} >What is the total amount to be paid to the Contractor? Enter fee amount:</Form.Label>
+          <Form.Label style={formStyles} >What is the total amount to be paid to the Contractor?</Form.Label>
           <Form.Control style={formStyles} type='text' name='fee' placeholder='Contract fee amount' required/>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label style={formStyles}>Payment is issued how many days after receiving an invoice??</Form.Label>
+          <Form.Control style={formStyles} type='text' name='paymentDays' defaultValue='45' required/>
         </Form.Group>
         </Card>
         <Card style={cardStyle}>
         <Form.Group>
-          <Form.Label style={formStyles} >Enter the contract start date:</Form.Label>
+          <Form.Label style={formStyles} >Contract start date:</Form.Label>
           <Form.Control style={formStyles} type='text' name='startDate' placeholder='...' required/>
         </Form.Group>
         <Form.Group>
-          <Form.Label style={formStyles} >Enter the contract end date:</Form.Label>
+          <Form.Label style={formStyles} >Contract end date:</Form.Label>
           <Form.Control style={formStyles} type='text' name='endDate' placeholder='...' required/>
         </Form.Group>
         </Card>
@@ -100,7 +101,7 @@ function AddTermForm(props) {
         </Card>
         <Card style={cardStyle}>
         <Form.Group>
-          <Form.Label style={formStyles}>Add Indemnification clause:</Form.Label>
+          <Form.Label style={formStyles}>Indemnification clause:</Form.Label>
           <textarea style={formStyles} type='text' name='indemnity' defaultValue={indemnityDefault} required/>
         </Form.Group>
         <Form.Group>
@@ -109,34 +110,27 @@ function AddTermForm(props) {
         </Form.Group>
         </Card>
         <Card style={cardStyle}>
-        <Form.Group>
-          <Form.Label style={formStyles}>Template Payment Term clause:</Form.Label>
-          <textarea readOnly style={formStyles} type='text' name='paymentTerm' defaultValue={paymentTermDefault}/>
-        </Form.Group>
-        <Form.Group>
-          <Form.Label style={formStyles}>How many days after invoice is received do you issue payment?</Form.Label>
-          <Form.Control style={formStyles} type='text' name='paymentDays' placeholder='Enter # of days...' required/>
-        </Form.Group>
+        
         </Card>
         <Card style={cardStyle}>
         <Form.Group>
-          <Form.Label style={formStyles}>Enter minimum GL insurance level per occurrence</Form.Label>
+          <Form.Label style={formStyles}>Minimum GL insurance level per occurrence</Form.Label>
           <textarea style={formStyles} type='text' name='glMin' defaultValue='1,000,000' required/>
         </Form.Group>
         <Form.Group>
-          <Form.Label style={formStyles}>Enter annual aggregate GL insurance</Form.Label>
+          <Form.Label style={formStyles}>Annual aggregate GL insurance</Form.Label>
           <textarea style={formStyles} type='text' name='glMax' defaultValue='3,000,000' required/>
         </Form.Group>
         <Form.Group>
-          <Form.Label style={formStyles}>Enter minimum PL insurance level per occurrence</Form.Label>
+          <Form.Label style={formStyles}>Minimum PL insurance level per occurrence</Form.Label>
           <textarea style={formStyles} type='text' name='plMin' defaultValue='3,000,000' required/>
         </Form.Group>
         <Form.Group>
-          <Form.Label style={formStyles}>Enter annual aggregate PL insurance</Form.Label>
+          <Form.Label style={formStyles}>Annual aggregate PL insurance</Form.Label>
           <textarea style={formStyles} type='text' name='plMax' defaultValue='5,000,000' required/>
         </Form.Group>
         </Card>
-        
+      
         <Button style={formStyles} variant='outline-dark' type='submit'>Add new terms</Button>
       </Form>
     </React.Fragment>

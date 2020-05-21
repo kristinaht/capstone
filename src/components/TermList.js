@@ -12,17 +12,14 @@ function TermList(props) {
  
 
   const termListStyle = {
-    // position: 'relative',
-    // margin: 'auto',
-    // top: '5vh',
-    display: 'flex',
-    // justifyContent: 'space-around',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    flexWrap: 'wrap'
-    // flexWrap: 'wrap',
-    // width: '80%',
-    // backgroundColor: '#D3D3D3'
+        // position: 'relative',
+        margin: 'auto',
+        top: '4vh',
+        display: 'flex',
+        justifyContent: 'space-between',
+        flexWrap: 'wrap',
+        // width: '80%',
+        
   }
 
   
@@ -32,39 +29,11 @@ function TermList(props) {
 
   const terms = useSelector(state => state.firestore.ordered.terms);
 
-  // const styles = StyleSheet.create({
-  //   page: {
-  //     flexDirection: 'row',
-  //     backgroundColor: '#E4E4E4'
-  //   },
-  //   section: {
-  //     margin: 10,
-  //     padding: 10,
-  //     flexGrow: 1
-  //   }
-  // });
-  
-
-
-  // const myDocument = (termsList) => (
-  //   <Document>
-  //     <Page size="A4" style={styles.page}>
-  //       <View style={styles.section}>
-  //         <Text>{termList}</Text>
-  //       </View>
-  //       <View style={styles.section}>
-  //         <Text>Section #2</Text>
-  //       </View>
-  //     </Page>
-  //   </Document>
-  // );
-  
-
   if(isLoaded(terms)) {
     return(
       // <div >
-      <Container>
-        {/* <hr/> */}
+      <React.Fragment>
+       
         <Card style={termListStyle}>
           { terms.map((term) => {
             return <Term 
@@ -88,7 +57,7 @@ function TermList(props) {
           })}
           {/* <Button onClick={myDocument}>Export</Button> */}
         </Card>
-      </Container>
+      </React.Fragment>
     )
   } else {
     return(

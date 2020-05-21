@@ -7,6 +7,7 @@ import { Card } from 'react-bootstrap';
 function Term(props){
 
   const termStyle = {
+    display: 'flex',
     textAlign: 'justify',
     border: '2px solid white',
     width: '400px',
@@ -26,7 +27,7 @@ function Term(props){
         <h4>Contracted Amount: ${props.fee}</h4>
         {/* <button onClick = {()=> props.whenTermClicked(props.id)}>DETAILS</button> */}
       </Card>
-      <hr/>
+      {/* <hr/> */}
     </React.Fragment>
   )
 }
