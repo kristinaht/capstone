@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function TermDetail(props) {
 
@@ -23,6 +24,7 @@ function TermDetail(props) {
   
   return(
     <React.Fragment>
+      <Link to="/">Home</Link>
       <Card style={termStyle}>
         <h1>Document Detail</h1>
         <h2>{ term.name } </h2>

@@ -15,7 +15,7 @@ function Home(){
     <React.Fragment>
       <div className='cHome' >
         
-          <h1 style={header} className='hHome'>ContractOR</h1>
+          <h1 style={header} className='hHome'>contractOR</h1>
           <Link to="/termcontrol" className='link'>Go to My Contracts</Link>
         
       </div>

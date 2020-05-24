@@ -10,7 +10,7 @@ function Term(props){
     // display: 'flex',
     // backgroundColor: '#491823c0',
     textAlign: 'justify',
-    border: '2px solid white',
+    border: '3px solid #166a80',
     width: '400px',
     height: '200px',
     padding: '2%',
