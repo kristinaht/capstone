@@ -10,6 +10,7 @@ import * as a from './../actions';
 import { withFirestore, isLoaded } from 'react-redux-firebase';
 import {  Button } from 'react-bootstrap';
 import { PDFDownloadLink, Document, Page } from '@react-pdf/renderer';
+import { Link } from 'react-router-dom';
 
 
 const termControlStyles = {
@@ -17,7 +18,6 @@ const termControlStyles = {
   top: '20vh',
   width: '80vw',
   height: 'auto',
-  // marginTop: '2vh',
   marginLeft: '10vw',
   marginRight: '10vw',
   marginBottom: '10%'
@@ -150,11 +150,16 @@ class TermsControl extends React.Component {
     buttonText='+ Create New Contract';
   }
   return(
+    <React.Fragment>
     <div style={termControlStyles}>
  
       <button className='myButton' onClick={ this.handleClick }>{ buttonText }</button>
       { currentlyVisibleState }
     </div>
+    <div>
+      <Link to="/" >Home</Link>
+    </div>
+    </React.Fragment>
   );
     }
   }
